@@ -7,14 +7,14 @@ import numpy as np
 ## x0 initial guess of the solution
 ############################################################
 
-def seidel(A,f,x0,ITER_MAX = 100, tol = 1E-8,_debug_=1):
+def gauss_seidel(A,f,x0,ITER_MAX = 100, tol = 1E-8,_debug_=1):
   # size of the system
   n = A.shape[0]
   # initialize the residual
   res = np.linalg.norm(f-np.dot(A,x0))
   
   # init the new vector
-  x_new = np.ones(n)
+  x_new = np.zeros(n)
 
   # copy the guess
   x = np.array(x0,copy=True)
@@ -54,4 +54,4 @@ def seidel(A,f,x0,ITER_MAX = 100, tol = 1E-8,_debug_=1):
   else:
     info = 1
 
-  return x,info, niter    
+  return x,info, niter
