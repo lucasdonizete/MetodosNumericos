@@ -14,7 +14,7 @@ def gauss_seidel(A,f,x0,ITER_MAX = 100, tol = 1E-8,_debug_=1):
   res = np.linalg.norm(f-np.dot(A,x0))
   
   # init the new vector
-  x_new = np.zeros(n)
+  x_new = np.ones(n)
 
   # copy the guess
   x = np.array(x0,copy=True)
